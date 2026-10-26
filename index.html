@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Low-Cost Tech & Internet Resources — Berkeley City College</title>
+
+  <!-- Typography: Newsreader (Serif), Geist (Sans), Geist Mono (Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Warm Alabaster Canvas */
+      --bg-page: #FBF9F5;
+      --card-bg: #FFFEFC;
+
+      /* High-Readability Editorial Ink */
+      --ink-primary: #1C1E21;
+      --ink-secondary: #383D43;
+      --ink-muted: #6C727A;
+      --border-line: #E8E5DD;
+
+      /* Official Civic Green - Frame Tokens */
+      --campus-green-bold: #1B5E20;
+      --campus-frame-border: #2D6A4F;
+      --campus-frame-bg: #F3F8F5;
+
+      /* Category Pill Tokens */
+      --pill-text-color: #FFFFFF;
+      --pill-campus-bg: #2C5270;   /* Slate Navy: Campus Free Lending */
+      --pill-hardware-bg: #21617A; /* Mineral Teal: Non-Profit Refurbished Tech */
+      --pill-internet-bg: #276345; /* Forest Pine: Broadband & Hotspots */
+      --pill-assist-bg: #754E33;   /* Warm Umber: Specialized & Accessibility */
+      --pill-outlet-bg: #4A5568;   /* Slate Neutral: Surplus Outlets & Marketplaces */
+
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.7;
+      display: flex;
+      justify-content: center;
+      padding: 68px 24px 140px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 670px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Motion */
+    @keyframes enter {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-enter {
+      animation: enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .delay-0 { animation-delay: 0ms; }
+    .delay-1 { animation-delay: 45ms; }
+    .delay-2 { animation-delay: 90ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-enter {
+        animation: none !important;
+      }
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 1.5px solid var(--ink-primary);
+      outline-offset: 3px;
+    }
+
+    .nav-back {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-muted);
+      text-decoration: none;
+      margin-bottom: 28px;
+      transition: color 150ms ease;
+    }
+    .nav-back:hover {
+      color: var(--ink-primary);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+      color: var(--ink-primary);
+      margin-bottom: 28px;
+    }
+
+    /* ========================================================= */
+    /* TOP FEATURED ENCLOSED GREEN FRAME: CAMPUS FREE TECH LENDING */
+    /* ========================================================= */
+    .campus-priority-panel {
+      background-color: var(--campus-frame-bg);
+      border: 2px solid var(--campus-frame-border);
+      border-radius: 6px;
+      padding: 22px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 6px rgba(45, 106, 79, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .campus-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid rgba(45, 106, 79, 0.25);
+    }
+
+    .campus-title-block {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .campus-header-label {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--campus-green-bold);
+    }
+
+    .campus-header-badge {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: #FFFFFF;
+      background: #2D6A4F;
+      padding: 2px 7.5px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .campus-item-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .campus-item-title {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .campus-item-desc {
+      font-size: 13.8px;
+      line-height: 1.62;
+      color: var(--ink-secondary);
+    }
+
+    .campus-how-box {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(45, 106, 79, 0.18);
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--ink-secondary);
+      margin-top: 2px;
+    }
+
+    .campus-how-box strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .campus-sub-divider {
+      height: 1px;
+      background: rgba(45, 106, 79, 0.18);
+      border: none;
+      margin: 4px 0;
+    }
+
+    /* Secondary Campus Note */
+    .official-note {
+      background-color: #F4F1EA;
+      border: 1px solid #E4E0D6;
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      margin-bottom: 34px;
+    }
+
+    .official-note a {
+      color: var(--ink-primary);
+      text-decoration: underline;
+      font-weight: 500;
+      text-underline-offset: 2.5px;
+    }
+
+    /* Table of Contents */
+    .toc-card {
+      background: #F7F5EE;
+      border: 1px solid var(--border-line);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin-bottom: 40px;
+    }
+
+    .toc-header {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+      border-bottom: 1px solid #E4E0D6;
+      padding-bottom: 6px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13.5px;
+    }
+
+    .toc-link {
+      color: var(--ink-secondary);
+      text-decoration: none;
+      transition: color 150ms ease;
+    }
+
+    .toc-link:hover {
+      color: var(--ink-primary);
+      text-decoration: underline;
+    }
+
+    .toc-dots {
+      flex: 1;
+      border-bottom: 1px dotted #D0CCC1;
+      margin: 0 10px;
+      transform: translateY(-3px);
+    }
+
+    .toc-page {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    /* Separators */
+    .section-divider {
+      height: 1px;
+      background-color: var(--border-line);
+      margin: 40px 0;
+      border: none;
+    }
+
+    .section-header-block {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    .section-subtitle-text {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      margin-top: 4px;
+      line-height: 1.55;
+    }
+
+    /* Resource Cards */
+    .resource-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .resource-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-line);
+      border-radius: 6px;
+      padding: 22px 22px 20px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .resource-card:hover {
+      border-color: #BDB9AC;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.035);
+    }
+
+    .row-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .title-group {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .action-group-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .type-pill {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 2.5px 9px;
+      border-radius: 9999px;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      color: var(--pill-text-color) !important;
+      border: none;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    }
+
+    .pill-campus   { background-color: var(--pill-campus-bg); }
+    .pill-hardware { background-color: var(--pill-hardware-bg); }
+    .pill-internet { background-color: var(--pill-internet-bg); }
+    .pill-assist   { background-color: var(--pill-assist-bg); }
+    .pill-outlet   { background-color: var(--pill-outlet-bg); }
+
+    .resource-title {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .resource-title:hover {
+      text-decoration: underline;
+    }
+
+    .arrow-icon {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      transition: transform 160ms ease;
+    }
+
+    .resource-card:hover .arrow-icon {
+      transform: translate(2px, -2px);
+    }
+
+    .badge-subtle {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      background: #F1EFE8;
+      padding: 2px 7px;
+      border-radius: 9999px;
+    }
+
+    /* Expand / Collapse Toggle Button */
+    .expand-toggle-btn {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: #1C1E21;
+      background: #F4F1EA;
+      border: 1px solid #DCD8CD;
+      padding: 3px 9px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 150ms ease;
+    }
+
+    .expand-toggle-btn:hover {
+      background: #EBE6DB;
+      border-color: #BEB7A8;
+    }
+
+    .resource-desc {
+      font-size: 14px;
+      color: var(--ink-secondary);
+      line-height: 1.66;
+    }
+
+    .frontline-box {
+      margin-top: 4px;
+      padding-top: 12px;
+      border-top: 1px solid #F1EFEA;
+      font-size: 13px;
+      color: var(--ink-secondary);
+      display: flex;
+      gap: 8px;
+      line-height: 1.58;
+    }
+
+    .frontline-tag {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-primary);
+      flex-shrink: 0;
+    }
+
+    .card-meta-line {
+      display: flex;
+      gap: 20px;
+      margin-top: 2px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-muted);
+      flex-wrap: wrap;
+    }
+
+    .card-meta-line span strong {
+      color: var(--ink-primary);
+      font-weight: 500;
+    }
+
+    /* ========================================================= */
+    /* IN-PLACE EXPANDABLE DRAWER (原地平滑展开容器) */
+    /* ========================================================= */
+    .expandable-content {
+      display: none;
+      margin-top: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-line);
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .expandable-content.is-open {
+      display: flex;
+      animation: enter 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .drawer-intro-box {
+      background: #FAF8F5;
+      border-left: 3px solid var(--campus-frame-border);
+      padding: 10px 14px;
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.62;
+    }
+
+    .drawer-section-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink-primary);
+      margin-top: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .drawer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .drawer-list li {
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .drawer-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--ink-muted);
+      font-family: var(--font-mono);
+    }
+
+    .drawer-list li strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .drawer-step-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .drawer-step-item {
+      background: #F8F7F3;
+      border: 1px solid #ECE8DF;
+      border-radius: 4px;
+      padding: 10px 12px;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--ink-secondary);
+    }
+
+    .drawer-step-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--campus-frame-border);
+      flex-shrink: 0;
+    }
+
+    .drawer-step-item strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .drawer-action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .drawer-portal-link {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #FFFFFF;
+      background: var(--ink-primary);
+      padding: 6px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity 150ms ease;
+    }
+    .drawer-portal-link:hover {
+      opacity: 0.88;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Navigation -->
+    <a href="/" class="nav-back animate-enter delay-0">← Back to Hub</a>
+
+    <!-- Header Section -->
+    <header class="animate-enter delay-1">
+      <div class="eyebrow">Berkeley City College · Basic Needs Center</div>
+      <h1>Low-Cost Tech & Internet Resources</h1>
+    </header>
+
+    <!-- 1. Enclosed Green Priority Panel: Campus Free Tech Lending -->
+    <section class="campus-priority-panel animate-enter delay-1">
+      <div class="campus-panel-header">
+        <div class="campus-title-block">
+          <span class="campus-header-label">Campus Free Tech Lending</span>
+        </div>
+        <span class="campus-header-badge">Priority BCC Services</span>
+      </div>
+
+      <!-- Item 1: BCC Library Chromebook Lending Program -->
+      <div class="campus-item-block">
+        <div class="campus-item-title">
+          <span>BCC Library Chromebook Lending Program</span>
+        </div>
+        <p class="campus-item-desc">
+          Berkeley City College Library offers free semester-long Chromebook loans for students enrolled in classes.
+        </p>
+        <div class="campus-how-box">
+          <strong>How to Get:</strong> Visit the BCC Library (1st Floor, 2050 Center St) with your Peralta Student ID at the beginning of each semester. Devices are free to borrow and must be returned at the end of the term.
+        </div>
+      </div>
+
+      <hr class="campus-sub-divider">
+
+      <!-- Item 2: Campus IT & Department Support -->
+      <div class="campus-item-block">
+        <div class="campus-item-title">
+          <span>Campus IT & Department Support</span>
+        </div>
+        <p class="campus-item-desc">
+          Check with special student support programs (such as EOPS, NextUp, or SAS) for access to emergency hardware grants or specialized assistive technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Secondary Official Note -->
+    <div class="official-note animate-enter delay-2">
+      <strong>Note:</strong> Need off-campus home internet, budget mobile data, or specialized personal computer hardware? Explore the verified non-profit programs, state subsidies, and low-cost commercial providers below.
+    </div>
+
+    <!-- 3. Table of Contents Section -->
+    <nav class="toc-card animate-enter delay-2" aria-label="Table of Contents">
+      <div class="toc-header">Table of Contents</div>
+      <ul class="toc-list">
+        <li class="toc-item">
+          <a href="#nonprofit-tech" class="toc-link">Non-Profit Tech & Digital Inclusion</a>
+          <span class="toc-dots"></span>
+          <span class="toc-page">1</span>
+        </li>
+        <li class="toc-item" style="margin-top:3px;">
+          <a href="#lowcost-internet" class="toc-link">Low-Cost Internet & Mobile Plans</a>
+          <span class="toc-dots"></span>
+          <span class="toc-page">3</span>
+        </li>
+        <li class="toc-item" style="margin-top:3px;">
+          <a href="#assistive-tech" class="toc-link">Assistive Technology & Accessibility Programs</a>
+          <span class="toc-dots"></span>
+          <span class="toc-page">6</span>
+        </li>
+        <li class="toc-item" style="margin-top:3px;">
+          <a href="#student-mobile" class="toc-link">Student Internet & Mobile Carrier Discounts</a>
+          <span class="toc-dots"></span>
+          <span class="toc-page">7</span>
+        </li>
+        <li class="toc-item" style="margin-top:3px;">
+          <a href="#surplus-outlets" class="toc-link">Surplus & Official Factory Outlets</a>
+          <span class="toc-dots"></span>
+          <span class="toc-page">10</span>
+        </li>
+        <li class="toc-item" style="margin-top:3px;">
+          <a href="#marketplaces" class="toc-link">Certified Refurbished & Marketplaces</a>
+          <span class="toc-dots"></span>
+          <span class="toc-page">12</span>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 1: NON-PROFIT TECH & DIGITAL INCLUSION -->
+    <!-- ========================================================= -->
+    <section id="nonprofit-tech" class="animate-enter delay-2">
+      <div class="section-header-block">
+        <span class="section-title">Non-Profit Tech & Digital Inclusion</span>
+        <p class="section-subtitle-text">Nationwide and regional non-profits providing enterprise-grade refurbished hardware, warranty support, and tech clinics.</p>
+      </div>
+
+      <div class="resource-list">
+
+        <!-- 1. PCs for People (Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-hardware">Refurbished Hardware</span>
+              <a href="https://www.pcsforpeople.org/" target="_blank" rel="noopener" class="resource-title">
+                PCs for People
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-pcsforpeople', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            A national non-profit organization that provides low-cost refurbished business computers (laptops from $100, desktops from $85) and affordable mobile internet to eligible low-income individuals. All operations from ConnectAll (InterConnection) have moved directly to PCs for People.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">Eligibility Notice:</span>
+            <span>You must show proof of income or enrollment in assistance programs (such as Pell Grant, CalFresh, or Medi-Cal) to purchase.</span>
+          </div>
+          <div class="card-meta-line">
+            <span><strong>Hardware:</strong> Windows 10/11 Pro + 1-Yr Warranty</span>
+            <span><strong>Hotspot:</strong> $15/mo Unlimited</span>
+          </div>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-pcsforpeople">
+            <div class="drawer-intro-box">
+              PCs for People provides low-cost refurbished business-grade computers and affordable mobile internet to eligible low-income individuals. All operations from ConnectAll (InterConnection) have fully merged into this program.
+            </div>
+
+            <div class="drawer-section-title">Eligibility Requirements</div>
+            <p style="font-size: 13.5px; color: var(--ink-secondary);">To qualify, you must verify your identity and demonstrate low-income eligibility through one of the following pathways:</p>
+            <ul class="drawer-list">
+              <li><strong>Government Assistance (Fastest):</strong> Pell Grant award letter for the current academic year; or approval documents for CalFresh / SNAP, Medi-Cal / Medicaid, SSI/SSDI, Section 8, or LIHEAP (issued within the past 12 months).</li>
+              <li><strong>Income Verification:</strong> Household income at or below 200% of the Federal Poverty Guidelines (or local AMI limits). Accepted proof: most recent Federal Tax Return (Form 1040) or official unemployment benefits statement. (Pay stubs, W-2 forms, and pending FAFSA forms are not accepted).</li>
+            </ul>
+
+            <div class="drawer-section-title">What to Expect & Recommended Specs</div>
+            <ul class="drawer-list">
+              <li><strong>Device Quality & Warranty:</strong> Fully wiped and refurbished enterprise-grade devices (e.g., Lenovo ThinkPad, Dell Latitude) running certified genuine Windows 10/11 Pro. Includes a 1-year limited hardware warranty.</li>
+              <li><strong>Recommended Specs for School:</strong> Aim for at least <strong>8GB RAM</strong> and <strong>256GB SSD storage</strong> (Intel 8th Gen Core i5 or AMD Ryzen 3000 series and newer for full Windows 11 compatibility).</li>
+              <li><strong>Low-Cost Mobile Hotspot:</strong> Unlimited mobile internet via T-Mobile nationwide coverage for <strong>$15/month</strong> after a one-time hotspot device purchase. Speeds may be subject to standard carrier prioritization during heavy network congestion.</li>
+            </ul>
+
+            <div class="drawer-section-title">How to Order</div>
+            <div class="drawer-step-grid">
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">01</span>
+                <div><strong>Prepare Documents:</strong> Have a digital copy of your photo ID and proof of eligibility ready (e.g., PDF of your Pell Grant letter).</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">02</span>
+                <div><strong>Select & Checkout:</strong> Browse inventory at pcsrefurbished.com and submit your documents during online checkout.</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">03</span>
+                <div><strong>Verification & Delivery:</strong> Verification takes 1–2 business days. Approved orders ship free via ground delivery within the continental U.S. (typically arriving in 4–7 business days).</div>
+              </div>
+            </div>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Platform: pcsforpeople.org</span>
+              <a href="https://www.pcsforpeople.org/" target="_blank" rel="noopener" class="drawer-portal-link">Visit Official Portal ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Human-I-T (Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-hardware">Tech & Skills</span>
+              <a href="https://www.human-i-t.org/" target="_blank" rel="noopener" class="resource-title">
+                Human-I-T
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-humanit', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            A digital inclusion non-profit that offers low-cost refurbished laptops, low-cost home internet support, and free online digital literacy training. Devices come with genuine operating systems, a standard warranty, and 1 year of free remote technical support.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">Perks:</span>
+            <span>Includes 1 full year of complimentary remote technical assistance for software and setup questions.</span>
+          </div>
+          <div class="card-meta-line">
+            <span><strong>Platform:</strong> human-i-t.org</span>
+            <span><strong>Shipping:</strong> Free Home Delivery</span>
+          </div>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-humanit">
+            <div class="drawer-intro-box">
+              Having a capable computer and reliable internet access is essential for academic coursework, remote work opportunities, and staying connected with your community. <strong>human-I-T</strong> connects students and community members with low-cost hardware, affordable home internet options, and ongoing digital skill support.
+            </div>
+
+            <div class="drawer-section-title">Key Program Highlights</div>
+            <ul class="drawer-list">
+              <li><strong>Reliable Enterprise-Grade Computers:</strong> Offers high-quality, professionally refurbished laptops and desktops tailored for coursework and daily productivity, complete with genuine operating systems.</li>
+              <li><strong>Dedicated Ongoing Support:</strong> Every qualifying device includes a standard hardware warranty alongside <strong>one full year of complimentary remote technical assistance</strong> to resolve everyday software and setup questions.</li>
+              <li><strong>Home Internet Guidance:</strong> Provides dedicated assistance to help households identify and apply for low-cost, high-speed home wireline or wireless internet plans.</li>
+              <li><strong>Complimentary Digital Literacy Training:</strong> Access free online learning modules to strengthen your proficiency in essential computing tools and everyday productivity applications.</li>
+            </ul>
+
+            <div class="drawer-section-title">Simple Eligibility Pathways</div>
+            <ul class="drawer-list">
+              <li><strong>Student & Academic Support:</strong> Proof of an active Federal Pell Grant award for the current academic year or enrollment in an accredited educational program.</li>
+              <li><strong>Community Health & Support Programs:</strong> Active participation in community support programs such as CalFresh / SNAP, Medi-Cal / Medicaid, Supplemental Security Income (SSI), or housing assistance.</li>
+              <li><strong>Standard Household Income Guidelines:</strong> Households with total pre-tax earnings at or below 200% of the Federal Poverty Guidelines qualify directly with standard verification documents (such as your most recent federal tax return).</li>
+            </ul>
+
+            <div class="drawer-section-title">3-Step Enrollment Guide</div>
+            <div class="drawer-step-grid">
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">01</span>
+                <div><strong>Browse Available Devices:</strong> Visit human-i-t.org to view the current selection of laptops and desktops configured for school and remote work.</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">02</span>
+                <div><strong>Submit Your Documents:</strong> During the checkout or registration process, securely upload a digital copy or clear smartphone photo of your qualifying document (such as your Pell Grant statement or program verification letter).</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">03</span>
+                <div><strong>Receive Free Home Delivery:</strong> Once verified, your device is shipped directly to your residence at no extra shipping cost, fully configured and ready to use.</div>
+              </div>
+            </div>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Platform: human-i-t.org</span>
+              <a href="https://www.human-i-t.org/" target="_blank" rel="noopener" class="drawer-portal-link">Visit Official Portal ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Tech Exchange (Oakland Local) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-hardware">East Bay Local</span>
+              <a href="https://www.techexchange.org/" target="_blank" rel="noopener" class="resource-title">
+                Tech Exchange (Oakland)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">Near Peralta Hub</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            A local East Bay non-profit in Oakland dedicated to closing the digital divide for students and families. Provides free or very low-cost computers, hardware repair, and tech support clinics.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">Location Advantage:</span>
+            <span>Located near Peralta colleges in Oakland, making it convenient for in-person equipment pick-up and diagnostic support.</span>
+          </div>
+          <div class="card-meta-line">
+            <span><strong>Location:</strong> Oakland, CA</span>
+            <span><strong>Services:</strong> Hardware Repair & Refurbished Laptops</span>
+          </div>
+        </article>
+
+        <!-- 4. Free Geek -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-hardware">Community Tech</span>
+              <a href="https://www.freegeek.org/" target="_blank" rel="noopener" class="resource-title">
+                Free Geek
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            A technology community organization that safely recycles electronic waste and refurbishes enterprise computers. In select locations and programs, community members can earn a refurbished computer by completing volunteer hours.
+          </p>
+          <div class="card-meta-line">
+            <span><strong>Model:</strong> Electronics Recycling & Volunteer Matching</span>
+          </div>
+        </article>
+
+        <!-- 5. The On It Foundation -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-hardware">Free Refurbished</span>
+              <a href="https://theonitfoundation.org/" target="_blank" rel="noopener" class="resource-title">
+                The On It Foundation
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Provides free refurbished computers, internet access education, and computer training. Primarily serves low-income families with K-12 students receiving free/reduced school lunches, but also assists qualifying transitional college students through select community partnerships.
+          </p>
+          <div class="card-meta-line">
+            <span><strong>Eligibility:</strong> Public Benefit Enrollment / Partner Referrals</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Structural Divider -->
+    <hr class="section-divider">
+
+    <!-- ========================================================= -->
+    <!-- SECTION 2: LOW-COST INTERNET & MOBILE PLANS -->
+    <!-- ========================================================= -->
+    <section id="lowcost-internet">
+      <div class="section-header-block">
+        <span class="section-title">Low-Cost Internet & Mobile Plans</span>
+        <p class="section-subtitle-text">Home wireline broadband, government subsidy discount programs, and free student data initiatives.</p>
+      </div>
+
+      <div class="resource-list">
+
+        <!-- 6. Internet Essentials from Comcast / Xfinity (Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">Wireline Broadband</span>
+              <a href="https://www.xfinity.com/learn/internet-service/internet-essentials" target="_blank" rel="noopener" class="resource-title">
+                Internet Essentials from Comcast / Xfinity
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-xfinity', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Affordable high-speed home internet for qualifying low-income households starting at about $9.95–$14.95/month (plus tax). No credit check, no contract, and free in-home Wi-Fi equipment included.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">Special Hardware Benefit:</span>
+            <span>Approved customers have the option to buy an internet-ready laptop or desktop computer for $149.99 (plus tax).</span>
+          </div>
+          <div class="card-meta-line">
+            <span><strong>Rates:</strong> $14.95/mo (75 Mbps) or $29.95/mo (100 Mbps)</span>
+            <span><strong>Equipment:</strong> $0 Rental Fee</span>
+          </div>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-xfinity">
+            <div class="drawer-intro-box">
+              Xfinity Internet Essentials is a community-focused initiative designed to keep household expenses manageable by offering affordable wireline broadband, free in-home Wi-Fi equipment, and budget-friendly computer options for eligible students and households.
+            </div>
+
+            <div class="drawer-section-title">Key Plan Benefits</div>
+            <ul class="drawer-list">
+              <li><strong>Zero Extra Equipment Costs:</strong> Includes an in-home Wi-Fi gateway with no monthly rental fees, no activation charges, and no long-term contracts.</li>
+              <li><strong>Standard Tier ($14.95/month):</strong> Delivers up to 75 Mbps download speeds, ideal for attending virtual classes, researching, and streaming across multiple personal devices.</li>
+              <li><strong>Plus Tier ($29.95/month):</strong> Delivers up to 100 Mbps download speeds, designed for multi-user households needing simultaneous HD video conferencing and large file transfers.</li>
+              <li><strong>$149.99 Subsidized Learning Device:</strong> Approved participants have the option to purchase a ready-to-use, genuine-OS laptop or desktop computer for $149.99 plus applicable taxes.</li>
+              <li><strong>Complimentary Digital Skill Resources:</strong> Access self-paced online tutorials to strengthen software and everyday digital skills.</li>
+            </ul>
+
+            <div class="drawer-section-title">Eligibility & Verification</div>
+            <ul class="drawer-list">
+              <li><strong>Academic & Student Support:</strong> Proof of an active Federal Pell Grant award for the current academic year.</li>
+              <li><strong>Community & Health Programs:</strong> Active enrollment in community assistance initiatives such as CalFresh / SNAP, Medi-Cal / Medicaid, SSI, or local housing assistance.</li>
+              <li><strong>Income Guidelines:</strong> Households with pre-tax income at or below 200% of the Federal Poverty Guidelines (e.g., approx. $31,920 for an individual or $43,280 for a two-person household).</li>
+              <li><strong>Policy Rule:</strong> Applicants should have no outstanding Comcast balance under one year old and must not have subscribed to standard retail Xfinity internet within the previous 90 days.</li>
+            </ul>
+
+            <div class="drawer-section-title">Simple 3-Step Setup</div>
+            <div class="drawer-step-grid">
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">01</span>
+                <div><strong>Check Coverage:</strong> Visit internetessentials.com or call 1-855-846-8376 to confirm service at your address.</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">02</span>
+                <div><strong>Submit Document:</strong> If automated verification does not confirm status immediately, upload a clear photo or PDF of your Pell Grant letter or benefit approval.</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">03</span>
+                <div><strong>Plug In & Connect:</strong> Once approved, a self-install kit ships free. Connect the gateway, open the Xfinity app, and your Wi-Fi is ready in minutes.</div>
+              </div>
+            </div>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Portal: internetessentials.com</span>
+              <a href="https://www.xfinity.com/learn/internet-service/internet-essentials" target="_blank" rel="noopener" class="drawer-portal-link">Visit Official Portal ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Access from AT&T (Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">Wireline Internet</span>
+              <a href="https://www.att.com/internet/access/" target="_blank" rel="noopener" class="resource-title">
+                Access from AT&T
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-att', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Low-cost home wireline internet service ($10 to $30/month) for eligible households participating in SNAP/CalFresh or SSI. Includes free installation, in-home Wi-Fi router, and no annual commitment.
+          </p>
+          <div class="card-meta-line">
+            <span><strong>Rates:</strong> $10 to $30/month</span>
+            <span><strong>Contract:</strong> No Annual Commitment</span>
+          </div>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-att">
+            <div class="drawer-intro-box">
+              Access from AT&T is a dedicated community connectivity program that delivers discounted, dependable home wireline internet service with clear pricing, zero hidden charges, and zero long-term commitments for qualifying households.
+            </div>
+
+            <div class="drawer-section-title">Key Program Benefits</div>
+            <ul class="drawer-list">
+              <li><strong>Affordable Monthly Rates:</strong> High-speed home wireline internet priced between <strong>$10 to $30/month</strong>, depending on maximum available speeds at your physical address.</li>
+              <li><strong>No Equipment or Installation Fees:</strong> Comes with complimentary in-home Wi-Fi gateway/router equipment and free standard home installation.</li>
+              <li><strong>Transparent Terms:</strong> No annual contracts, no activation fees, and no required credit checks.</li>
+              <li><strong>Generous Data Capacity:</strong> Reliable network allowance suitable for participating in video meetings, uploading coursework, and home streaming.</li>
+            </ul>
+
+            <div class="drawer-section-title">Eligibility & Verification</div>
+            <ul class="drawer-list">
+              <li><strong>Nutritional Support:</strong> Current participation in Supplemental Nutrition Assistance Program (SNAP) / CalFresh.</li>
+              <li><strong>Supplemental Income:</strong> Active enrollment in Supplemental Security Income (SSI) for California residents.</li>
+              <li><strong>Academic Support:</strong> Head-of-household students receiving a Federal Pell Grant for the current school term or NSLP participant homes.</li>
+              <li><strong>Income Guidelines:</strong> Households at or below 200% of the Federal Poverty Guidelines qualify via Form 1040 tax return.</li>
+            </ul>
+
+            <div class="drawer-section-title">Simple 3-Step Setup</div>
+            <div class="drawer-step-grid">
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">01</span>
+                <div><strong>Verify Home Coverage:</strong> Visit att.com/internet/access or call 1-855-220-5211 to confirm wireline service availability at your street address.</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">02</span>
+                <div><strong>Submit Verification Online:</strong> Fill out the online application and upload a digital copy of your CalFresh, SSI, or Pell Grant notice.</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">03</span>
+                <div><strong>Receive & Connect:</strong> Self-installation gateway ships free. Plug in and follow step-by-step mobile instructions to activate your home Wi-Fi.</div>
+              </div>
+            </div>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Portal: att.com/internet/access</span>
+              <a href="https://www.att.com/internet/access/" target="_blank" rel="noopener" class="drawer-portal-link">Visit Official Portal ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Astound Broadband: Internet First -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">Wireline Internet</span>
+              <a href="https://www.astound.com/internetfirst/" target="_blank" rel="noopener" class="resource-title">
+                Astound Broadband: Internet First
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">From $9.95/mo</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Affordable high-speed wireline internet for qualifying households starting at $9.95/month. Includes a standard modem and in-home Wi-Fi with no credit check, no annual contract, and zero installation fees.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">Key Plan Options:</span>
+            <span>Offers up to 50 Mbps for $9.95/month or up to 150 Mbps for $19.95/month with unlimited data.</span>
+          </div>
+        </article>
+
+        <!-- 9. Spectrum Internet Assist (SIA) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">Cable Internet</span>
+              <a href="https://www.spectrum.com/internet/spectrum-internet-assist" target="_blank" rel="noopener" class="resource-title">
+                Spectrum Internet Assist (SIA)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">No Data Caps</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Low-cost, reliable wireline cable internet for qualifying households for about $19.99 to $24.99/month. Features no data caps, no long-term contracts, and a complimentary standard internet modem.
+          </p>
+          <div class="card-meta-line">
+            <span><strong>Speeds:</strong> Up to 50 Mbps download / 10 Mbps upload</span>
+          </div>
+        </article>
+
+        <!-- 10. T-Mobile Project 10Million -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">100% Free Hotspot</span>
+              <a href="https://www.t-mobile.com/brand/project-10-million" target="_blank" rel="noopener" class="resource-title">
+                T-Mobile Project 10Million (K-12 Student Households)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">$0/month</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            T-Mobile’s national digital equity initiative designed to eliminate the homework gap for low-income student households. <strong>100% Free ($0/month)</strong>: Includes a complimentary 5G mobile hotspot device and 200GB of high-speed data per year for up to 5 years, with zero monthly fees, zero hardware costs, and no annual re-certifications.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">Eligibility:</span>
+            <span>Households with an enrolled K-12 student participating in NSLP, CalFresh / SNAP, Medicaid / Medi-Cal, or CEP.</span>
+          </div>
+        </article>
+
+        <!-- 11. California LifeLine (Broadband Discount Program) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">State Broadband Credit</span>
+              <a href="https://broadbandforall.cdt.ca.gov/ca-lifeline-home-broadband-pilot-program/" target="_blank" rel="noopener" class="resource-title">
+                California LifeLine (Broadband Discount Program)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">$15–$20/mo Discount</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            An official California state program providing a direct recurring discount of up to $15–$20/month on eligible standalone home internet bills through participating providers.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">Key Advantage:</span>
+            <span>Acts as a direct discount on standard commercial home fiber or cable bills for addresses where dedicated $10 plans are physically unavailable.</span>
+          </div>
+        </article>
+
+        <!-- 12. Cox Connect2Compete & ConnectAssist -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">Wireline Internet</span>
+              <a href="https://www.cox.com/residential/internet/low-cost-internet-plans.html" target="_blank" rel="noopener" class="resource-title">
+                Cox Connect2Compete & ConnectAssist
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">Cox Footprint</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Discounted home wireline internet for qualifying families and college students within Cox service areas, featuring free equipment, zero contracts, and no credit checks. Connect2Compete offers 100 Mbps for $9.95/month; ConnectAssist offers 100 Mbps for $30/month for Pell Grant recipients.
+          </p>
+        </article>
+
+        <!-- 13. Verizon Forward -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">Fiber Subsidy</span>
+              <a href="https://www.verizon.com/discounts/verizon-forward/" target="_blank" rel="noopener" class="resource-title">
+                Verizon Forward (Discounted Home Internet)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">$20–$30/mo Off</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Delivers a direct $20 to $30/month discount on home internet for households receiving Lifeline, CalFresh, Medi-Cal, or a Federal Pell Grant. Brings high-speed symmetrical fiber down to as low as $20–$25/month with included router equipment.
+          </p>
+        </article>
+
+        <!-- 14. Frontier Fiber with Lifeline Support -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">Symmetrical Fiber</span>
+              <a href="https://frontier.com/discount-programs/lifeline-program" target="_blank" rel="noopener" class="resource-title">
+                Frontier Fiber with Lifeline Support
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Direct government subsidy support that applies federal and state Lifeline discounts to Frontier's entry-level fiber plans, lowering monthly costs down to roughly $20.74/month for true symmetrical fiber (200–500 Mbps) with no data caps.
+          </p>
+        </article>
+
+        <!-- 15. California LifeLine Program (Mobile & Phone - Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-internet">Free Phone & Data</span>
+              <a href="https://www.californialifeline.com/en" target="_blank" rel="noopener" class="resource-title">
+                California LifeLine Program
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-lifeline', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            A state program that provides discounted or free basic home phone or cell phone service to eligible low-income households. Participating wireless providers (such as Assurance Wireless and Q Link Wireless) often offer a free basic smartphone with monthly talk, text, and data with hotspot capability.
+          </p>
+          <div class="card-meta-line">
+            <span><strong>Benefit:</strong> Free Basic Smartphone + Monthly Data</span>
+            <span><strong>Authority:</strong> CPUC Regulated</span>
+          </div>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-lifeline">
+            <div class="drawer-intro-box">
+              California LifeLine is a state-administered initiative overseen by the California Public Utilities Commission (CPUC) designed to keep communication affordable by providing monthly discounts on essential home phone and mobile services for eligible California residents.
+            </div>
+
+            <div class="drawer-section-title">Key Program Benefits</div>
+            <ul class="drawer-list">
+              <li><strong>Monthly Service Credits:</strong> Substantial ongoing bill reductions applied directly to qualifying home wireline or wireless phone plans.</li>
+              <li><strong>No-Cost Mobile Plans & Free Device Options:</strong> Participating wireless providers often supply approved participants with a $0/month plan—featuring talk, text, data, and hotspot—paired with a basic smartphone.</li>
+              <li><strong>One Connection Per Household:</strong> Designate your benefit toward either one landline or one wireless line per residence.</li>
+            </ul>
+
+            <div class="drawer-section-title">Eligibility Pathways</div>
+            <ul class="drawer-list">
+              <li><strong>Pathway 1: Program-Based (Recommended):</strong> Active participation in CalFresh / SNAP, Medi-Cal / Medicaid, SSI, LIHEAP, Section 8, or Federal Pell Grants.</li>
+              <li><strong>Pathway 2: Household Income Verification:</strong> Total annual household income falling within state-defined guidelines verified via tax returns or official benefit statements.</li>
+            </ul>
+
+            <div class="drawer-section-title">Simple 3-Step Enrollment</div>
+            <div class="drawer-step-grid">
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">01</span>
+                <div><strong>Choose a Service Provider:</strong> Contact an authorized California LifeLine wireless provider and request enrollment.</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">02</span>
+                <div><strong>Submit Your Application:</strong> Receive an application packet with your unique Personal Identification Number (PIN).</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">03</span>
+                <div><strong>Verify & Activate:</strong> Visit californialifeline.com to upload your proof of eligibility; service credit or free mobile device kit is issued upon approval.</div>
+              </div>
+            </div>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Platform: californialifeline.com</span>
+              <a href="https://www.californialifeline.com/en" target="_blank" rel="noopener" class="drawer-portal-link">Visit Official Portal ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 16. EveryoneOn (Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">Offer Search Engine</span>
+              <a href="https://www.everyoneon.org/" target="_blank" rel="noopener" class="resource-title">
+                EveryoneOn
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-everyoneon', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            A national non-profit social enterprise that runs an easy-to-use search engine for low-cost internet offers and subsidized computers. Enter a zip code and select qualifying programs (Pell Grant, CalFresh, Medi-Cal) to instantly view all eligible ISP discounts and refurbished computer programs.
+          </p>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-everyoneon">
+            <div class="drawer-intro-box">
+              EveryoneOn provides an open-access locator tool to help individuals and families discover affordable home internet programs, low-cost computer options, and digital learning workshops available in their neighborhood.
+            </div>
+
+            <div class="drawer-section-title">Key Navigator Features</div>
+            <ul class="drawer-list">
+              <li><strong>Localized Search Engine:</strong> Scans national and regional ISPs to find affordable home plans matched to your exact area code.</li>
+              <li><strong>Low-Cost Computer Marketplace:</strong> Connects participants directly with certified non-profit refurbishers offering quality desktop and laptop hardware.</li>
+              <li><strong>Digital Literacy & Skill Programs:</strong> Highlights free local classes and online modules covering foundational computing skills.</li>
+              <li><strong>No Fee & Neutral Guidance:</strong> Completely free to use, independent, and requires no account creation to browse plans.</li>
+            </ul>
+
+            <div class="drawer-section-title">How the Discovery Tool Works</div>
+            <ul class="drawer-list">
+              <li><strong>Start with Your Location:</strong> Visit everyoneon.org and enter your 5-digit postal zip code to instantly view connectivity options.</li>
+              <li><strong>Select Household Characteristics:</strong> Check off ongoing programs (Pell Grant, CalFresh, Medi-Cal) to explore specific community rates.</li>
+              <li><strong>Compare & Connect Directly:</strong> Review costs, specs, and application links, then connect directly with your chosen provider.</li>
+            </ul>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Platform: everyoneon.org</span>
+              <a href="https://www.everyoneon.org/" target="_blank" rel="noopener" class="drawer-portal-link">Visit Official Portal ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 17. Internet For All Now (Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">Statewide Initiative</span>
+              <a href="https://www.internetforallnow.org/" target="_blank" rel="noopener" class="resource-title">
+                Internet For All Now (California Specific)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-internetforall', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            An official California initiative run by the California Emerging Technology Fund (CETF). It is designed specifically to help California residents find affordable home internet, low-cost computers, and digital literacy training.
+          </p>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-internetforall">
+            <div class="drawer-intro-box">
+              Internet For All Now is a statewide digital inclusion initiative led by the California Emerging Technology Fund (CETF) dedicated to connecting California residents with affordable home broadband options, budget-friendly computers, and free digital literacy opportunities.
+            </div>
+
+            <div class="drawer-section-title">Key Initiative Highlights</div>
+            <ul class="drawer-list">
+              <li><strong>California-Focused Connectivity Finder:</strong> Curates local, affordable high-speed home internet plans across California neighborhoods.</li>
+              <li><strong>Subsidized Learning Hardware:</strong> Directs students to verified non-profit programs offering reliable laptops and desktops at community-accessible pricing.</li>
+              <li><strong>Free Digital Literacy Workshops:</strong> Highlights local and online learning modules hosted by public libraries and campus centers.</li>
+              <li><strong>Multilingual Community Assistance:</strong> Guided support via helpline services to assist residents navigating plan choices.</li>
+            </ul>
+
+            <div class="drawer-section-title">3-Step Enrollment Guide</div>
+            <div class="drawer-step-grid">
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">01</span>
+                <div><strong>Visit the Initiative Hub:</strong> Go to internetforallnow.org and choose the connectivity locator, or call the state support helpline.</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">02</span>
+                <div><strong>Review Local Options:</strong> Enter your California zip code and check off qualifying student programs (Pell Grant, CalFresh, Medi-Cal).</div>
+              </div>
+              <div class="drawer-step-item">
+                <span class="drawer-step-num">03</span>
+                <div><strong>Connect & Activate:</strong> Follow direct links to enroll with the provider of your choice and set up home access.</div>
+              </div>
+            </div>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Platform: internetforallnow.org</span>
+              <a href="https://www.internetforallnow.org/" target="_blank" rel="noopener" class="drawer-portal-link">Visit Official Portal ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Structural Divider -->
+    <hr class="section-divider">
+
+    <!-- ========================================================= -->
+    <!-- SECTION 3: ASSISTIVE TECHNOLOGY & ACCESSIBILITY PROGRAMS -->
+    <!-- ========================================================= -->
+    <section id="assistive-tech">
+      <div class="section-header-block">
+        <span class="section-title">Assistive Technology & Accessibility Programs</span>
+        <p class="section-subtitle-text">State-mandated universal access equipment, amplified communication tools, and mobility phone accessories.</p>
+      </div>
+
+      <div class="resource-list">
+
+        <!-- 18. California Connect (Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-assist">Free Adaptive Tech</span>
+              <a href="https://caconnect.org/" target="_blank" rel="noopener" class="resource-title">
+                California Connect (CTAP - California Telephone Access Program)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-caconnect', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            A state-mandated program by the CPUC providing <strong>free specialized telecommunications equipment and smartphone accessories</strong> to California residents with difficulty hearing, seeing, speaking, moving, or remembering. Includes amplified phones, speech-generating devices, and hands-free mobile phone accessories at zero cost.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">Eligibility:</span>
+            <span><strong>No income requirements.</strong> Requires an application signed by a licensed physician, audiologist, or a campus SAS (Student Accessibility Services) counselor.</span>
+          </div>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-caconnect">
+            <div class="drawer-intro-box">
+              California Connect (administered under the California Telephone Access Program / CPUC) provides free specialized communication equipment and mobile accessories to California residents with communication accessibility needs.
+            </div>
+
+            <div class="drawer-section-title">Key Program Benefits</div>
+            <ul class="drawer-list">
+              <li><strong>Specialized Adaptive Hardware at No Cost:</strong> Receive tailored tools—including amplified phones, high-contrast big-button devices, speech-generating tools, and hands-free smartphone accessories—at zero expense.</li>
+              <li><strong>Universal Access (No Income Requirements):</strong> Funded by a state universal service surcharge; <strong>no household income limits or financial background checks</strong>.</li>
+              <li><strong>Dedicated Setup Assistance:</strong> Access complimentary equipment setup guidance and technical support to ensure devices operate smoothly.</li>
+              <li><strong>Direct Home Delivery:</strong> Approved equipment is shipped directly to your residence at zero shipping cost.</li>
+            </ul>
+
+            <div class="drawer-section-title">Eligibility Requirements</div>
+            <ul class="drawer-list">
+              <li><strong>California Residency:</strong> Reside in the State of California and have access to basic telephone service (landline, mobile phone, or VOIP).</li>
+              <li><strong>Professional Certification:</strong> Application certified by a licensed medical/accessibility professional (primary physician, audiologist, optometrist) or a <strong>campus Student Accessibility Services (SAS / DSPS) specialist</strong>.</li>
+            </ul>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Platform: caconnect.org</span>
+              <a href="https://caconnect.org/" target="_blank" rel="noopener" class="drawer-portal-link">Visit Official Portal ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Structural Divider -->
+    <hr class="section-divider">
+
+    <!-- ========================================================= -->
+    <!-- SECTION 4: STUDENT INTERNET & MOBILE CARRIER DISCOUNTS -->
+    <!-- ========================================================= -->
+    <section id="student-mobile">
+      <div class="section-header-block">
+        <span class="section-title">Student Internet & Mobile Carrier Discounts</span>
+        <p class="section-subtitle-text">Official California Community Colleges broadband and low-cost MVNO carriers ideal for non-welfare or international students.</p>
+      </div>
+
+      <div class="resource-list">
+
+        <!-- 19. California Connects (via CollegeBuys - Full Guide Drawer) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">CCC Official Program</span>
+              <a href="https://store.collegebuys.org/" target="_blank" rel="noopener" class="resource-title">
+                California Connects (via CollegeBuys)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <button type="button" class="expand-toggle-btn" onclick="toggleDrawer('drawer-collegebuys', this)">
+                <span>View Full Guide</span> <span>▾</span>
+              </button>
+            </div>
+          </div>
+          <p class="resource-desc">
+            An official program by the Foundation for California Community Colleges providing low-cost mobile internet exclusively to CCC students, faculty, and staff. Unlimited mobile internet starting at <strong>$13.99 to $19.99/month</strong> with no contract, no throttling, and no credit check.
+          </p>
+          <div class="frontline-box">
+            <span class="frontline-tag">How It Works:</span>
+            <span>Operates via a portable Wi-Fi hotspot powered by T-Mobile nationwide coverage. Requires proof of active enrollment in a CCC (such as a Peralta student ID).</span>
+          </div>
+
+          <!-- In-place Expandable Drawer -->
+          <div class="expandable-content" id="drawer-collegebuys">
+            <div class="drawer-intro-box">
+              CollegeBuys is the official collective purchasing program of the Foundation for California Community Colleges, offering significant discounts on mobile broadband, academic devices, and software without any welfare qualification requirements or credit evaluations.
+            </div>
+
+            <div class="drawer-section-title">1. California Connects: Unlimited Mobile Broadband</div>
+            <ul class="drawer-list">
+              <li><strong>Transparent Pricing:</strong> High-speed mobile internet for <strong>$13.99 to $19.99/month</strong>, with no long-term contracts, no credit checks, and no data throttling.</li>
+              <li><strong>Nationwide Network:</strong> Uses a pocket-sized mobile Wi-Fi hotspot operating across T-Mobile’s national 4G/5G infrastructure.</li>
+              <li><strong>Simple Hardware Access:</strong> Students purchase the dedicated hotspot router through CollegeBuys at cost, then activate the flexible monthly plan.</li>
+              <li><strong>Study Anywhere:</strong> Securely powers multiple personal devices—including laptops, tablets, and phones—for remote coursework.</li>
+            </ul>
+
+            <div class="drawer-section-title">2. Computing Hardware & Academic Software</div>
+            <ul class="drawer-list">
+              <li><strong>Student-Ready Computers:</strong> Discounted commercial-grade laptops and desktops from Lenovo, Dell, and HP configured for academic multitasking.</li>
+              <li><strong>Pre-Installed OS:</strong> Devices include fully licensed Windows or macOS systems with clean factory configurations.</li>
+              <li><strong>Software Subscriptions:</strong> Direct access to educational pricing for Adobe Creative Cloud student licenses and Microsoft 365 tools.</li>
+              <li><strong>Standard Warranty:</strong> Hardware purchases are backed by standard commercial warranties.</li>
+            </ul>
+
+            <div class="drawer-section-title">Eligibility & 3-Step Enrollment</div>
+            <ul class="drawer-list">
+              <li><strong>Eligibility:</strong> Valid California Community College student ID (e.g., Peralta ID card), current term class schedule, or .edu email. Zero financial or tax reviews.</li>
+              <li><strong>Step 1:</strong> Visit store.collegebuys.org and choose Internet Access or Technology & Hardware.</li>
+              <li><strong>Step 2:</strong> Submit your class schedule or log in with your Peralta account to unlock academic pricing.</li>
+              <li><strong>Step 3:</strong> Order completes and ships directly to your residence ready to connect.</li>
+            </ul>
+
+            <div class="drawer-action-row">
+              <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-muted);">Platform: store.collegebuys.org</span>
+              <a href="https://store.collegebuys.org/" target="_blank" rel="noopener" class="drawer-portal-link">Visit CollegeBuys Store ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 20. Mint Mobile -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">Budget Prepaid</span>
+              <a href="https://www.mintmobile.com/" target="_blank" rel="noopener" class="resource-title">
+                Mint Mobile
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">T-Mobile 5G</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Prepaid phone plans in 3, 6, or 12-month bundles starting at <strong>$15/month</strong> for unlimited talk/text and 5GB high-speed data. Best for students with an unlocked phone who can pay upfront for maximum savings.
+          </p>
+        </article>
+
+        <!-- 21. US Mobile -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">Multi-Network MVNO</span>
+              <a href="https://www.usmobile.com/" target="_blank" rel="noopener" class="resource-title">
+                US Mobile
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">Warp / Dark Star / Light Speed</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Flexible carrier letting users choose between Verizon, AT&T, or T-Mobile networks. Plans start at <strong>$10/month</strong> for light data, or unlimited monthly plans starting around $25/month with all taxes and fees included.
+          </p>
+        </article>
+
+        <!-- 22. Tello Mobile -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">Custom Plan</span>
+              <a href="https://tello.com/" target="_blank" rel="noopener" class="resource-title">
+                Tello Mobile
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">From $5–$10/mo</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Highly customizable service on T-Mobile where users build their own plan. Basic talk-and-text plans start as low as <strong>$5 to $10/month</strong> with 1GB–2GB of data. Best for students who rely mostly on campus Wi-Fi.
+          </p>
+        </article>
+
+        <!-- 23. Visible -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">Unlimited Data + Hotspot</span>
+              <a href="https://www.visible.com/" target="_blank" rel="noopener" class="resource-title">
+                Visible (by Verizon)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">$25/mo All-In</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Truly unlimited talk, text, and 5G data on Verizon's network for <strong>$25/month</strong> (taxes and fees included). Key Feature: Includes <strong>unlimited mobile hotspot</strong> usage (speed-capped at 5 Mbps) to connect your laptop anywhere.
+          </p>
+        </article>
+
+        <!-- 24. Google Fi Wireless -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">International Friendly</span>
+              <a href="https://fi.google.com/about/plans?pli=1" target="_blank" rel="noopener" class="resource-title">
+                Google Fi Wireless (Flexible Plan)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">Global Roaming</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Flexible pay-per-GB pricing starting at <strong>$20/month</strong> plus $10 per GB for high-speed data. Best for international students and frequent travelers, providing hassle-free roaming across 200+ destinations at no extra cost on select plans.
+          </p>
+        </article>
+
+        <!-- 25. Boost Mobile -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">Price-Lock Deal</span>
+              <a href="https://www.boostmobile.com/" target="_blank" rel="noopener" class="resource-title">
+                Boost Mobile
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">$25/mo Unlimited</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Unlimited talk, text, and 5G data starting at <strong>$25/month</strong> with an explicit price-lock guarantee. Zero contracts, supports immediate eSIM activation, and competitive smartphone trade-ins.
+          </p>
+        </article>
+
+        <!-- 26. Cricket Wireless -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">AT&T Prepaid</span>
+              <a href="https://www.cricketwireless.com/" target="_blank" rel="noopener" class="resource-title">
+                Cricket Wireless
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            AT&T’s primary prepaid subsidiary. Multi-tier plans from $30/month (5GB) to unlimited. Group discounts for roommates and families can bring 4-line unlimited plans down to roughly <strong>$25/line</strong>.
+          </p>
+        </article>
+
+        <!-- 27. Metro by T-Mobile -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">In-Person Retail</span>
+              <a href="https://www.metrobyt-mobile.com/" target="_blank" rel="noopener" class="resource-title">
+                Metro by T-Mobile
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            T-Mobile's flagship prepaid brand starting at $40/month. Best for students who prefer in-person walk-in customer support and paying cash without needing a credit card.
+          </p>
+        </article>
+
+        <!-- 28. TextNow (Free Essential Data Plan) -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-campus">$0/mo Freemium</span>
+              <a href="https://www.textnow.com/wireless" target="_blank" rel="noopener" class="resource-title">
+                TextNow (Free Essential Data Plan)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">Emergency Backup</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            <strong>$0/month ad-supported wireless service</strong> providing free talk, text, and essential data (email, map navigation, rideshare) after a one-time $5 activation SIM card purchase. Ideal for zero-budget emergency communication backup.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Structural Divider -->
+    <hr class="section-divider">
+
+    <!-- ========================================================= -->
+    <!-- SECTION 5: SURPLUS & OFFICIAL FACTORY OUTLETS -->
+    <!-- ========================================================= -->
+    <section id="surplus-outlets">
+      <div class="section-header-block">
+        <span class="section-title">Surplus & Official Factory Outlets</span>
+        <p class="section-subtitle-text">Direct manufacturer refurbishment centers and university surplus liquidation channels.</p>
+      </div>
+
+      <div class="resource-list">
+
+        <!-- 29. Apple Certified Refurbished -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Official Refurbished</span>
+              <a href="https://www.apple.com/shop/refurbished" target="_blank" rel="noopener" class="resource-title">
+                Apple Certified Refurbished
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">1-Yr Apple Warranty</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Official direct refurbishment program selling pre-owned MacBooks, iPads, and Macs tested to original factory standards. Includes brand-new outer shell, new replacement battery, genuine accessories, 1-year Apple warranty, and AppleCare+ eligibility. Focus on Apple Silicon M-series models.
+          </p>
+        </article>
+
+        <!-- 30. Dell Refurbished -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Enterprise Off-Lease</span>
+              <a href="https://www.dellrefurbished.com/" target="_blank" rel="noopener" class="resource-title">
+                Dell Refurbished
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Official outlet selling off-lease enterprise desktop towers and business laptops directly to the public. Best choice: <strong>Latitude 5000 or 7000 Series</strong> for durable, easily upgradeable laptops. Watch homepage for regular 40% to 50% discount coupon codes.
+          </p>
+        </article>
+
+        <!-- 31. Lenovo Outlet -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Factory Returns</span>
+              <a href="https://www.lenovo.com/us/en/outlet" target="_blank" rel="noopener" class="resource-title">
+                Lenovo Outlet
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Official refurbished units, customer returns, and excess inventory direct from Lenovo. Best choice: <strong>ThinkPad T Series or X Series</strong> business models with spill-resistant keyboards and durable frames. Includes 1-year standard warranty.
+          </p>
+        </article>
+
+        <!-- 32. HP Business Outlet -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Commercial Returns</span>
+              <a href="https://www.hp.com/" target="_blank" rel="noopener" class="resource-title">
+                HP Business Outlet
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            HP's official refurbished center for commercial computers. Search under Business/Commercial for <strong>EliteBook</strong> or <strong>ProBook</strong> laptops with sturdy metal chassis and full-sized ports (HDMI, USB-C).
+          </p>
+        </article>
+
+        <!-- 33. UC Berkeley Surplus -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Campus Liquidation</span>
+              <a href="https://property.berkeley.edu/" target="_blank" rel="noopener" class="resource-title">
+                UC Berkeley Surplus (GovDeals)
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">No OS / As-Is</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            UC Berkeley surplus equipment and laboratory computers auctioned via GovDeals. <strong>Notice:</strong> Most desktop computers are sold <strong>without hard drives (No OS/No Drive)</strong> due to data security rules. Buyers must install their own SSD and OS. Sold strictly as-is.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Structural Divider -->
+    <hr class="section-divider">
+
+    <!-- ========================================================= -->
+    <!-- SECTION 6: CERTIFIED REFURBISHED & MARKETPLACES -->
+    <!-- ========================================================= -->
+    <section id="marketplaces">
+      <div class="section-header-block">
+        <span class="section-title">Certified Refurbished & Marketplaces</span>
+        <p class="section-subtitle-text">Secondary electronics marketplaces offering warranty coverage, buyer protections, and student discounts.</p>
+      </div>
+
+      <div class="resource-list">
+
+        <!-- 34. Best Buy Outlet & Certified Refurbished -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Open-Box & Refurb</span>
+              <a href="https://www.bestbuy.com/site/electronics/outlet-refurbished-clearance/pcmcat142300050026.c?id=pcmcat142300050026" target="_blank" rel="noopener" class="resource-title">
+                Best Buy Outlet & Certified Refurbished
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">Local Store Pickup</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Best Buy clearance channel featuring store display models, customer returns (Open-Box), and professionally tested pre-owned hardware. Look for items tagged "Geek Squad Certified Refurbished" or "Open-Box Excellent" for local store pickup and full return windows.
+          </p>
+        </article>
+
+        <!-- 35. Back Market -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Online Marketplace</span>
+              <a href="https://www.backmarket.com/" target="_blank" rel="noopener" class="resource-title">
+                Back Market
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">5% Student Discount</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Specialized marketplace for refurbished electronics (MacBooks, Windows PCs, tablets) categorized into Fair, Good, and Excellent cosmetic tiers. Students receive an additional 5% discount via Student Beans. Includes 1-year warranty and 30-day money-back guarantee.
+          </p>
+        </article>
+
+        <!-- 36. eBay Refurbished -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Allstate Warranty</span>
+              <a href="https://www.ebay.com/" target="_blank" rel="noopener" class="resource-title">
+                eBay Refurbished
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">1–2 Year Coverage</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Certified refurbished hardware from verified liquidators backed by 1- to 2-year commercial warranties managed through Allstate. Use "Make Offer" on eligible listings to secure additional savings below list prices.
+          </p>
+        </article>
+
+        <!-- 37. Amazon Renewed -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Renewed Guarantee</span>
+              <a href="https://www.amazon.com/" target="_blank" rel="noopener" class="resource-title">
+                Amazon Renewed
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Pre-owned and refurbished products inspected and tested to work and look like new. Backed by the 90-day Amazon Renewed Guarantee (up to 1 year for Renewed Premium items), with guaranteed minimum 80% battery capacity.
+          </p>
+        </article>
+
+        <!-- 38. Swappa -->
+        <article class="resource-card">
+          <div class="row-header">
+            <div class="title-group">
+              <span class="type-pill pill-outlet">Verified P2P</span>
+              <a href="https://www.swappa.com/" target="_blank" rel="noopener" class="resource-title">
+                Swappa
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+            <div class="action-group-right">
+              <span class="badge-subtle">Serial Checked</span>
+            </div>
+          </div>
+          <p class="resource-desc">
+            Direct user-to-user tech marketplace with strict listing verification. Sellers must submit verification photos with screen lighting visible before approval. Devices with outstanding finance balances or blacklisted serial numbers are strictly prohibited.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean In-Place Drawer Toggle Script -->
+  <script>
+    function toggleDrawer(drawerId, btnElement) {
+      const drawer = document.getElementById(drawerId);
+      if (!drawer) return;
+
+      const isOpen = drawer.classList.contains('is-open');
+
+      if (isOpen) {
+        drawer.classList.remove('is-open');
+        btnElement.innerHTML = '<span>View Full Guide</span> <span>▾</span>';
+      } else {
+        drawer.classList.add('is-open');
+        btnElement.innerHTML = '<span>Collapse Guide</span> <span>▴</span>';
+      }
+    }
+  </script>
+</body>
+</html>
